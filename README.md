@@ -3,7 +3,8 @@ Beberapa Hal yang harus dilakukan ketika baru install kali linux
 
 ## Fix Update
 1. Backup sources.list bawaan
-2. Ubah source.list menggunakan deb alternatif barkeley agar update ngebut karena pake yang official lelet banget kaya keong
+2. Ubah source.list menggunakan Server Mirror ID agar update ngebut karena pake yang official lelet banget kaya keong
+3. bisa cek di web https://http.kali.org/README.mirrorlist
 
 ```bash
 sudo nano /etc/apt/sources.list
@@ -11,9 +12,11 @@ sudo nano /etc/apt/sources.list
 
 setelah itu ganti isinya dengan :
 ```bash
-deb https://mirrors.ocf.berkeley.edu/kali/  kali-rolling main contrib non
-# For source package access, uncomment the following line
-# deb-src https://mirrors.ocf.berkeley.edu/kali/ kali-rolling main contrib
+# See https://www.kali.org/docs/general-use/kali-linux-sources-list-repositories/
+deb https://xsrv.moratelindo.io/kali/ kali-rolling main contrib non-free non-free-firmware
+
+# Additional line for source packages
+# deb-src https://xsrv.moratelindo.io/kali/ kali-rolling main contrib non-free non-free-firmware
 ```
 
 jika sudah, lanjutkan dengan command :
